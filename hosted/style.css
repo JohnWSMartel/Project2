@@ -118,9 +118,9 @@ nav:nth-child(1) {
     margin-top: 14px;
     font-size: 1.2em;
     width: 100px;
-    background-color: #55acee;
+    background-color: black;
     border-radius: 2px;
-    border-color: #66acee;
+    border-color: dimgrey;
     padding: 3px 0px;
     color: white;
     text-decoration: none;
@@ -132,7 +132,7 @@ nav:nth-child(1) {
 
 .formSubmit:hover {
     transition: background-color 0.4s ease;
-    background-color: #338acc;
+    background-color: dimgray;
 }
 
 #user, #pass, #pass2 {
@@ -205,7 +205,7 @@ nav:nth-child(1) {
     margin-bottom: 2px;
     border: 2px solid #55acee;
     border-radius: 4px;
-    background-color: #55acee;
+    background-color: black;
     padding: 10px;
     min-height:60px;
     overflow: hidden;
@@ -215,7 +215,7 @@ nav:nth-child(1) {
     transition: border-color 0.2s ease-out;
     border-color: rgba(255,255,255, 0.8);
     transition: background-color 2.6s ease-out;
-    background-color: darkgray;
+    background-color: darkred;
 }
 
 img.domoFace {
