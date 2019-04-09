@@ -115,6 +115,24 @@ const DomoList = function(props) {
 	);
 };
 
+const Arena = function(props){
+  return(
+    <form id="arena"
+      onSubmit={fight}
+      name="arena"
+      action="/maker"
+      method="POST"
+      className="domoForm"
+    >
+      <label htmlFor="fighter1">First Fighter: </label>
+      <input id="fighter1Name" type="text" name="fighter" placeholder="Fighter 1" />
+      <label htmlFor="fighter2">Second Fighter: </label>
+      <input id="fighter2Name" type="text" name="fighter" placeholder="Fighter 2" />
+      <input type="hidden" name="_csrf" value={props.csrf} />
+      <input className="makeDomoSubmit" type="submit" value="FIGHT!" />
+    </form>
+  );
+};
 
 const setup = function(csrf){
 	ReactDOM.render(

@@ -152,6 +152,33 @@ var DomoList = function DomoList(props) {
 	);
 };
 
+var Arena = function Arena(props) {
+	return React.createElement(
+		'form',
+		{ id: 'arena',
+			onSubmit: fight,
+			name: 'arena',
+			action: '/maker',
+			method: 'POST',
+			className: 'domoForm'
+		},
+		React.createElement(
+			'label',
+			{ htmlFor: 'fighter1' },
+			'First Fighter: '
+		),
+		React.createElement('input', { id: 'fighter1Name', type: 'text', name: 'fighter', placeholder: 'Fighter 1' }),
+		React.createElement(
+			'label',
+			{ htmlFor: 'fighter2' },
+			'Second Fighter: '
+		),
+		React.createElement('input', { id: 'fighter2Name', type: 'text', name: 'fighter', placeholder: 'Fighter 2' }),
+		React.createElement('input', { type: 'hidden', name: '_csrf', value: props.csrf }),
+		React.createElement('input', { className: 'makeDomoSubmit', type: 'submit', value: 'FIGHT!' })
+	);
+};
+
 var setup = function setup(csrf) {
 	ReactDOM.render(React.createElement(DomoForm, { csrf: csrf }), document.querySelector("#makeDomo"));
 
