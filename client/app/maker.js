@@ -65,13 +65,13 @@ const DomoForm = (props) => {
 			className="domoForm"
 		>
 			<label htmlFor="name">Name: </label>
-			<input id="domoName" type="text" name="name" placeholder="Domo Name" />
+			<input id="domoName" type="text" name="name" placeholder="Fighter Name" />
 			<label htmlFor="age">Age: </label>
-			<input id="domoAge" type="text" name="age" placeholder="Domo Age" />
+			<input id="domoAge" type="text" name="age" placeholder="Fighter Age" />
             <label htmlFor="level">Level: </label>
-            <input id="domoLevel" type="text" name="level" placeholder="1" />
+            <input id="domoLevel" type="text" name="level" placeholder="Fighter Level" />
 			<input type="hidden" name="_csrf" value={props.csrf} />
-			<input className="makeDomoSubmit" type="submit" value="Make Domo" />
+			<input className="makeDomoSubmit" type="submit" value="Make Fighter" />
 		</form>
 	);
 };
@@ -80,7 +80,7 @@ const DomoList = function(props) {
 	if(props.domos.length === 0){
 		return (
 			<div className = "domoList">
-				<h3 className="emptyDomo">No Domos yet</h3>
+				<h3 className="emptyDomo">No Fighters yet</h3>
 			</div>
 		);
 	}
@@ -96,13 +96,13 @@ const DomoList = function(props) {
             className="domoList"
           >
 			<div key={domo._id} className="domo">
-				<img src="/assets/img/domoface.jpeg" alt="domo face" className="domoFace" />
+				<img src="/assets/img/domoface.jpeg" alt="Fighter face" className="domoFace" />
 				<h3 className="domoName"> Name: {domo.name} </h3>
 				<h3 className="domoAge"> Age: {domo.age} </h3>
                 <h3 className="domoLevel"> Level: {domo.level} </h3>
                 <input id="_id" type="hidden" name="_id" value={domo._id} />
 				<input id="csrf" type="hidden" name="_csrf" value={props.csrf} />
-                <input type="submit" value="Delete Domo" />
+                <input type="submit" value="Kill Fighter" />
 			</div>
           </form>
 		);

@@ -71,21 +71,21 @@ var DomoForm = function DomoForm(props) {
 			{ htmlFor: 'name' },
 			'Name: '
 		),
-		React.createElement('input', { id: 'domoName', type: 'text', name: 'name', placeholder: 'Domo Name' }),
+		React.createElement('input', { id: 'domoName', type: 'text', name: 'name', placeholder: 'Fighter Name' }),
 		React.createElement(
 			'label',
 			{ htmlFor: 'age' },
 			'Age: '
 		),
-		React.createElement('input', { id: 'domoAge', type: 'text', name: 'age', placeholder: 'Domo Age' }),
+		React.createElement('input', { id: 'domoAge', type: 'text', name: 'age', placeholder: 'Fighter Age' }),
 		React.createElement(
 			'label',
 			{ htmlFor: 'level' },
 			'Level: '
 		),
-		React.createElement('input', { id: 'domoLevel', type: 'text', name: 'level', placeholder: '1' }),
+		React.createElement('input', { id: 'domoLevel', type: 'text', name: 'level', placeholder: 'Fighter Level' }),
 		React.createElement('input', { type: 'hidden', name: '_csrf', value: props.csrf }),
-		React.createElement('input', { className: 'makeDomoSubmit', type: 'submit', value: 'Make Domo' })
+		React.createElement('input', { className: 'makeDomoSubmit', type: 'submit', value: 'Make Fighter' })
 	);
 };
 
@@ -97,7 +97,7 @@ var DomoList = function DomoList(props) {
 			React.createElement(
 				'h3',
 				{ className: 'emptyDomo' },
-				'No Domos yet'
+				'No Fighters yet'
 			)
 		);
 	}
@@ -116,7 +116,7 @@ var DomoList = function DomoList(props) {
 			React.createElement(
 				'div',
 				{ key: domo._id, className: 'domo' },
-				React.createElement('img', { src: '/assets/img/domoface.jpeg', alt: 'domo face', className: 'domoFace' }),
+				React.createElement('img', { src: '/assets/img/domoface.jpeg', alt: 'Fighter face', className: 'domoFace' }),
 				React.createElement(
 					'h3',
 					{ className: 'domoName' },
@@ -140,7 +140,7 @@ var DomoList = function DomoList(props) {
 				),
 				React.createElement('input', { id: '_id', type: 'hidden', name: '_id', value: domo._id }),
 				React.createElement('input', { id: 'csrf', type: 'hidden', name: '_csrf', value: props.csrf }),
-				React.createElement('input', { type: 'submit', value: 'Delete Domo' })
+				React.createElement('input', { type: 'submit', value: 'Kill Fighter' })
 			)
 		);
 	});
