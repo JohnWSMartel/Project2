@@ -56,20 +56,17 @@ const getDomos = (request, response) => {
   });
 };
 
-//I had to rewrite this function. The version that was here had a lot wrong with it
+// I had to rewrite this function. The version that was here had a lot wrong with it
 const deleteDomo = (req, res) => {
-    
-    //If they dont have the proper elements in their request, send back a 400
-    if(!req.body._id) {
-          return res.status(400).json({ error: 'An error occured' });
-    }
-    
-    //Otherwise delete the domo and send back a 200 when complete
-    Domo.DomoModel.deleteOne({_id:req.body._id}, () => {
-        return res.status(200);
-    });
-	//sending a 200 to avoid lint error
-    return res.status(200);
+    // If they dont have the proper elements in their request, send back a 400
+  if (!req.body._id) {
+    return res.status(400).json({ error: 'An error occured' });
+  }
+
+    // Otherwise delete the domo and send back a 200 when complete
+  Domo.DomoModel.deleteOne({ _id: req.body._id }, () => res.status(200));
+	// sending a 200 to avoid lint error
+  return res.status(200);
 };
 
 module.exports.makerPage = makerPage;
