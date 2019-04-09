@@ -38,7 +38,7 @@ nav:nth-child(1) {
     text-decoration: none;
     padding: 5px;
     border-radius: 4px;
-    background-color: #55acee;
+    background-color: black;
     transition: background-color 0.4s ease;
 }
 
@@ -259,4 +259,8 @@ h3.domoAge {
 
 .domo:last-child {
     margin-bottom:10px;
+}
+
+#ad {
+  align-content: center;
 }
