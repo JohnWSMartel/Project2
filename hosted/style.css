@@ -262,5 +262,6 @@ h3.domoAge {
 }
 
 .ad {
-  align-content: center;
+  margin: auto;
+  width: 50%;
 }
