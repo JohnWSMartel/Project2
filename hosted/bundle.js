@@ -152,6 +152,25 @@ var DomoList = function DomoList(props) {
 	);
 };
 
+//Make a new area with two text boxes where the user can enter the fighters
+var Arena = function Arena(props){
+	return React.createElement(
+		'form',
+		{
+			id: 'arena',
+			onSubmit: fight,
+			name: 'arena',
+			action: '/maker',
+			method: 'POST',
+			className: 'domoForm'
+		},
+		React.createElement('label',{htmlFor: 'fighter1'}, 
+																'Fighter 1: '),
+		React.createElement('input',{id: 'fighter1Name',type: 'text', /*fighter 1: 'fighter 1', */ placeholder: 'Name'}),
+		React.createEl
+	);
+};
+
 var setup = function setup(csrf) {
 	ReactDOM.render(React.createElement(DomoForm, { csrf: csrf }), document.querySelector("#makeDomo"));
 

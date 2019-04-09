@@ -68,6 +68,7 @@ const deleteDomo = (req, res) => {
     Domo.DomoModel.deleteOne({_id:req.body._id}, () => {
         return res.status(200);
     });
+	//sending a 200 to avoid lint error
     return res.status(200);
 };
 
