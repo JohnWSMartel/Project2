@@ -167,7 +167,8 @@ var Arena = function Arena(props){
 		React.createElement('label',{htmlFor: 'fighter1'}, 
 																'Fighter 1: '),
 		React.createElement('input',{id: 'fighter1Name',type: 'text', /*fighter 1: 'fighter 1', */ placeholder: 'Name'}),
-		React.createEl
+		React.createElement('input',{id: 'fighter2Name',type: 'text', /*fighter 2: 'fighter 2', */ placeholder: 'Name'}),
+        React.createElement('input', {id: 'csrf', type: 'hidden', name: '_csrf', value: props.csrf}),
 	);
 };
 
