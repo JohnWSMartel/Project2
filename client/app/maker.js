@@ -143,6 +143,10 @@ const setup = function(csrf){
 	ReactDOM.render(
 		<DomoList domos={[]} csrf={csrf} />, document.querySelector("#domos")
 	);
+  
+    ReactDom.render(
+        <Arena csrf={csrf} />, document.querySelector("#arena")
+    );
 	
 	loadDomosFromServer();
 };

@@ -185,6 +185,8 @@ var setup = function setup(csrf) {
 	// When we render the page, we need to add csrf={csrf} to add the token to the props object
 	ReactDOM.render(React.createElement(DomoList, { domos: [], csrf: csrf }), document.querySelector("#domos"));
 
+	ReactDom.render(React.createElement(Arena, { csrf: csrf }), document.querySelector("#arena"));
+
 	loadDomosFromServer();
 };
 
