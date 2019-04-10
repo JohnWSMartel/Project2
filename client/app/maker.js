@@ -55,6 +55,10 @@ const removeDomo = (e) => {
 	return false;
 };
 
+const fight = (e) => {
+  e.preventDefault();
+};
+
 const DomoForm = (props) => {
 	return (
 		<form id="domoForm"
@@ -122,7 +126,7 @@ const Arena = function(props){
       name="arena"
       action="/maker"
       method="POST"
-      className="domoForm"
+      className="arena"
     >
       <label htmlFor="fighter1">First Fighter: </label>
       <input id="fighter1Name" type="text" name="fighter" placeholder="Fighter 1" />
@@ -144,7 +148,7 @@ const setup = function(csrf){
 		<DomoList domos={[]} csrf={csrf} />, document.querySelector("#domos")
 	);
   
-    ReactDom.render(
+    ReactDOM.render(
         <Arena csrf={csrf} />, document.querySelector("#arena")
     );
 	

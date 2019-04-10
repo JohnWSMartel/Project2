@@ -56,6 +56,10 @@ var removeDomo = function removeDomo(e) {
 	return false;
 };
 
+var fight = function fight(e) {
+	e.preventDefault();
+};
+
 var DomoForm = function DomoForm(props) {
 	return React.createElement(
 		'form',
@@ -160,7 +164,7 @@ var Arena = function Arena(props) {
 			name: 'arena',
 			action: '/maker',
 			method: 'POST',
-			className: 'domoForm'
+			className: 'arena'
 		},
 		React.createElement(
 			'label',
@@ -185,7 +189,7 @@ var setup = function setup(csrf) {
 	// When we render the page, we need to add csrf={csrf} to add the token to the props object
 	ReactDOM.render(React.createElement(DomoList, { domos: [], csrf: csrf }), document.querySelector("#domos"));
 
-	ReactDom.render(React.createElement(Arena, { csrf: csrf }), document.querySelector("#arena"));
+	ReactDOM.render(React.createElement(Arena, { csrf: csrf }), document.querySelector("#arena"));
 
 	loadDomosFromServer();
 };
