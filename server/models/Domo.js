@@ -61,6 +61,14 @@ DomoSchema.statics.deleteById = (_id, callback) => {
   DomoModel.deleteOne(search, callback);
 };
 
+DomoSchema.statics.findByName = (_name,callback) => {
+  const search = {
+    name: _name
+  };
+    
+  return DomoModel.find(search).select('name age level _id').exec(callback);
+};
+
 DomoModel = mongoose.model('Domo', DomoSchema);
 
 module.exports.DomoModel = DomoModel;

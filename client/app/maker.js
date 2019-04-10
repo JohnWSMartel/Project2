@@ -57,6 +57,16 @@ const removeDomo = (e) => {
 
 const fight = (e) => {
   e.preventDefault();
+  
+  const f1Name = e.target.querySelector("#fighter1Name");
+  const f2Name = e.target.querySelector("#fighter2Name");
+  const formData = `name1=${f1Name}&name2=${f2Name}`;
+  
+  //end the above to the server and finish fight there
+  //post request
+  
+  
+  return false;
 };
 
 const DomoForm = (props) => {
@@ -124,7 +134,7 @@ const Arena = function(props){
     <form id="arena"
       onSubmit={fight}
       name="arena"
-      action="/maker"
+      action="/doFight"
       method="POST"
       className="arena"
     >
@@ -133,8 +143,8 @@ const Arena = function(props){
       <label htmlFor="fighter2">Second Fighter: </label>
       <input id="fighter2Name" type="text" name="fighter" placeholder="Fighter 2" />
       <input type="hidden" name="_csrf" value={props.csrf} />
-      <input className="makeDomoSubmit" type="submit" value="FIGHT!" />
-    </form>
+      <input className="makeFightHappen" type="submit" value="FIGHT!" />
+    </form> 
   );
 };
 

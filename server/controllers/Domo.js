@@ -69,7 +69,22 @@ const deleteDomo = (req, res) => {
   return res.status(200);
 };
 
+const doFight = (req, res) => {
+  //make sure both names are there
+  if(!req.body.name1||!req.body.name2){
+    return res.status(400).json({ error: 'An error occured' });
+  }
+  
+  //find the actual domo with all their data
+  const fighter1 Domo.DomoModel.findByName(req.body.name1);
+  const fighter2 Domo.DomoModel.findByName(req.body.name2);
+  
+  fighter1Score = fighter1.level + fighter1.age;
+  fighter2Score = fighter2.level + fighter2.age;
+};
+
 module.exports.makerPage = makerPage;
 module.exports.getDomos = getDomos;
 module.exports.make = makeDomo;
 module.exports.deleteDomo = deleteDomo;
+module.exports.doFight = doFight;
