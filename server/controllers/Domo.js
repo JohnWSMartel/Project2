@@ -76,8 +76,8 @@ const doFight = (req, res) => {
   }
   
   //find the actual domo with all their data
-  const fighter1 Domo.DomoModel.findByName(req.body.name1);
-  const fighter2 Domo.DomoModel.findByName(req.body.name2);
+  const fighter1 = Domo.DomoModel.findByName(req.body.name1);
+  const fighter2 = Domo.DomoModel.findByName(req.body.name2);
   
   //Determine fight scores
   //Math.floor(Math.random()*7) returns a random integer from 0 to 6
@@ -86,14 +86,14 @@ const doFight = (req, res) => {
   
   if(fighter1Score>fighter2Score){
     //delete fighter 2
-    Domo.DomoModel.deleteOne({fighter1._id}, () => res.status(200));
+    Domo.DomoModel.deleteOne({_id: fighter1._id}, () => res.status(200));
   } else if(fighter2Score>fighter1Score){
     //delte fighter 1
-    Domo.DomoModel.deleteOne({fighter2._id}, () => res.status(200));
+    Domo.DomoModel.deleteOne({_id: fighter2._id}, () => res.status(200));
   } else if(fighter1Score==fighter2Score){
     //delte them both
-    Domo.DomoModel.deleteOne({fighter1._id}, () => res.status(200));
-    Domo.DomoModel.deleteOne({fighter2._id}, () => res.status(200));
+    Domo.DomoModel.deleteOne({_id: fighter1._id}, () => res.status(200));
+    Domo.DomoModel.deleteOne({_id: fighter2._id}, () => res.status(200));
   }
 };
 
