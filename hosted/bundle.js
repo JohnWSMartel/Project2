@@ -63,9 +63,20 @@ var fight = function fight(e) {
   var f2Name = e.target.querySelector("#fighter2Name");
   var formData = 'name1=' + f1Name + '&name2=' + f2Name;
 
-  //end the above to the server and finish fight there
+  //send the above to the server and finish fight there
   //post request
+  //We can construct a request by getting the method (post) and the action (/deleteDomo)
+  //out of the form in the event (e) object.
+  var xhr = new XMLHttpRequest();
+  xhr.open(e.target.method, e.target.action);
 
+  //Setup our headers
+  xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+  xhr.setRequestHeader('Accept', 'application/json');
+
+  //Send the request, and get all the domos from the server so the page refreshes
+  xhr.send(formData);
+  loadDomosFromServer();
 
   return false;
 };
