@@ -60,7 +60,9 @@ const fight = (e) => {
   
   const f1Name = e.target.querySelector("#fighter1Name");
   const f2Name = e.target.querySelector("#fighter2Name");
-  const formData = `name1=${f1Name}&name2=${f2Name}`;
+  const formId = e.target.querySelector("#csrf");
+  const formData = `name1=${f1Name}&name2=${f2Name}&_csrf=${formId}`;
+  
   
   //send the above to the server and finish fight there
   //post request
