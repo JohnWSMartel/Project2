@@ -83,7 +83,7 @@ const doFight = (req, res) => {
     const fighter1 = docs;
     //put prints in here to test
 		console.log("fighter 1: "+fighter1);
-    Domo.DomoModel.findByName(req.body.name2, (err, _docs) => {
+    Domo.DomoModel.findByName(req.body.name2, (_err, _docs) => {
       const fighter2 = _docs;
       console.log("fighter 2: "+fighter2);
       // Determine fight scores
@@ -103,9 +103,7 @@ const doFight = (req, res) => {
         Domo.DomoModel.deleteOne({ _id: fighter2._id }, () => res.status(200));
       }
     });
-  });  
-
-  return res.status(200);
+  });
 };
 
 module.exports.makerPage = makerPage;
