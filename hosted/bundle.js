@@ -61,7 +61,8 @@ var fight = function fight(e) {
 
   var f1Name = e.target.querySelector("#fighter1Name");
   var f2Name = e.target.querySelector("#fighter2Name");
-  var formData = 'name1=' + f1Name + '&name2=' + f2Name;
+  var formId = e.target.querySelector("#csrf");
+  var formData = 'name1=' + f1Name + '&name2=' + f2Name + '&_csrf=' + formId;
 
   //send the above to the server and finish fight there
   //post request
