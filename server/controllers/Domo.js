@@ -82,9 +82,10 @@ const doFight = (req, res) => {
   return Domo.DomoModel.findByName(req.body.name1, (err, docs) => {
     const fighter1 = docs;
     //put prints in here to test
+		console.log("fighter 1: "+fighter1);
     Domo.DomoModel.findByName(req.body.name2, (err, _docs) => {
       const fighter2 = _docs;
-      
+      console.log("fighter 2: "+fighter2);
       // Determine fight scores
       // Math.floor(Math.random()*7) returns a random integer from 0 to 6
       const fighter1Score = (fighter1.level + fighter1.age) * Math.floor(Math.random() * 7);
