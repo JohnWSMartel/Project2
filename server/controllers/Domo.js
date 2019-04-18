@@ -78,7 +78,7 @@ const doFight = (req, res) => {
   // find the actual domo with all their data
   //const fighter1 = Domo.DomoModel.findByName(req.body.name1);
   //const fighter2 = Domo.DomoModel.findByName(req.body.name2);
-  
+  console.log("Fight Started");
   return Domo.DomoModel.findByName(req.body.name1, (err, docs) => {
     const fighter1 = docs;
     //put prints in here to test
