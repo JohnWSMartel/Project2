@@ -80,14 +80,10 @@ const doFight = (req, res) => {
   //const fighter2 = Domo.DomoModel.findByName(req.body.name2);
   console.log("Fight Started");
   return Domo.DomoModel.findByName(req.body.name1, (err, docs) => {
+		//docs is an array within which is an index _doc with what I want
     const fighter1 = docs[0]._doc;
-    //put prints in here to test
-        console.dir(fighter1);
-		console.log("fighter 1: " + typeof fighter1);
-        console.log("fighter 1's property:" + fighter1._id);
     Domo.DomoModel.findByName(req.body.name2, (_err, _docs) => {
-      const fighter2 = _docs;
-      console.log("fighter 2: "+fighter2);
+      const fighter2 = _docs[0]._docs;
       // Determine fight scores
       // Math.floor(Math.random()*7) returns a random integer from 0 to 6
       const fighter1Score = (fighter1.level + fighter1.age) * Math.floor(Math.random() * 7);
