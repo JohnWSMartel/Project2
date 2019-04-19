@@ -200,7 +200,7 @@ var Arena = function Arena(props) {
       'Second Fighter: '
     ),
     React.createElement('input', { id: 'fighter2Name', type: 'text', name: 'fighter', placeholder: 'Fighter 2' }),
-    React.createElement('input', { type: 'hidden', name: '_csrf', value: props.csrf }),
+    React.createElement('input', { id: '_csrf', type: 'hidden', name: '_csrf', value: props.csrf }),
     React.createElement('input', { className: 'makeFightHappen', type: 'submit', value: 'FIGHT!' })
   );
 };
