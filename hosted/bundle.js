@@ -59,9 +59,9 @@ var removeDomo = function removeDomo(e) {
 var fight = function fight(e) {
   e.preventDefault();
 
-  var f1Name = e.target.querySelector("#fighter1Name");
-  var f2Name = e.target.querySelector("#fighter2Name");
-  var formId = e.target.querySelector("#_csrf");
+  var f1Name = e.target.querySelector("#fighter1Name").value;
+  var f2Name = e.target.querySelector("#fighter2Name").value;
+  var formId = e.target.querySelector("#_csrf").value;
   var formData = 'name1=' + f1Name + '&name2=' + f2Name + '&_csrf=' + formId;
 
   //send the above to the server and finish fight there
@@ -193,13 +193,13 @@ var Arena = function Arena(props) {
       { htmlFor: 'fighter1' },
       'First Fighter: '
     ),
-    React.createElement('input', { id: 'fighter1Name', type: 'text', name: 'fighter', placeholder: 'Fighter 1' }),
+    React.createElement('input', { id: 'fighter1Name', type: 'text', name: 'name1', placeholder: 'Fighter 1' }),
     React.createElement(
       'label',
       { htmlFor: 'fighter2' },
       'Second Fighter: '
     ),
-    React.createElement('input', { id: 'fighter2Name', type: 'text', name: 'fighter', placeholder: 'Fighter 2' }),
+    React.createElement('input', { id: 'fighter2Name', type: 'text', name: 'name2', placeholder: 'Fighter 2' }),
     React.createElement('input', { id: '_csrf', type: 'hidden', name: '_csrf', value: props.csrf }),
     React.createElement('input', { className: 'makeFightHappen', type: 'submit', value: 'FIGHT!' })
   );

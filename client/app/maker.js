@@ -58,9 +58,9 @@ const removeDomo = (e) => {
 const fight = (e) => {
   e.preventDefault();
   
-  const f1Name = e.target.querySelector("#fighter1Name");
-  const f2Name = e.target.querySelector("#fighter2Name");
-  const formId = e.target.querySelector("#_csrf");
+  const f1Name = e.target.querySelector("#fighter1Name").value;
+  const f2Name = e.target.querySelector("#fighter2Name").value;
+  const formId = e.target.querySelector("#_csrf").value;
   const formData = `name1=${f1Name}&name2=${f2Name}&_csrf=${formId}`;
   
   
@@ -153,9 +153,9 @@ const Arena = function(props){
       className="arena"
     >
       <label htmlFor="fighter1">First Fighter: </label>
-      <input id="fighter1Name" type="text" name="fighter" placeholder="Fighter 1" />
+      <input id="fighter1Name" type="text" name="name1" placeholder="Fighter 1" />
       <label htmlFor="fighter2">Second Fighter: </label>
-      <input id="fighter2Name" type="text" name="fighter" placeholder="Fighter 2" />
+      <input id="fighter2Name" type="text" name="name2" placeholder="Fighter 2" />
       <input id="_csrf" type="hidden" name="_csrf" value={props.csrf} />
       <input className="makeFightHappen" type="submit" value="FIGHT!" />
     </form> 
