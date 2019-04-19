@@ -83,7 +83,7 @@ const doFight = (req, res) => {
 		//docs is an array within which is an index _doc with what I want
     const fighter1 = docs[0]._doc;
     Domo.DomoModel.findByName(req.body.name2, (_err, _docs) => {
-      const fighter2 = _docs[0]._docs;
+      const fighter2 = _docs[0]._doc;
       // Determine fight scores
       // Math.floor(Math.random()*7) returns a random integer from 0 to 6
       const fighter1Score = (fighter1.level + fighter1.age) * Math.floor(Math.random() * 7);
